@@ -34,7 +34,7 @@ const MobileNav = () => {
   const pathname = usePathname();
   return (
     <Sheet>
-      <SheetTrigger className="flex justify-center items-center">
+      <SheetTrigger >
         <CiMenuFries className="text-[32px] text-accent"/>
       </SheetTrigger>
       <SheetContent className="flex flex-col ">
@@ -46,7 +46,8 @@ const MobileNav = () => {
           </Link>
         </div>
 
-        <nav>{links.map((link, index) => {
+        <nav className="flex flex-col justify-center items-center gap-8">
+          {links.map((link, index) => {
           return (
             <Link href={link.path}
               key={index}
@@ -54,7 +55,8 @@ const MobileNav = () => {
               {link.name}
             </Link>
           )
-        }) }</nav>
+          })}
+        </nav>
       </SheetContent>
     </Sheet>
   )
